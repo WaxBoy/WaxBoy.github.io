@@ -2,16 +2,54 @@
 <html>
 <head>
     <title>My Italy</title>
+    <script>
+        function changeBackgroundColor() {
+			const colors = ['#008C45', '#F4F9FF', '#CD212A', '#000000'];
+			const randomColor = colors[Math.floor(Math.random() * colors.length)];
+			document.body.style.backgroundColor = randomColor;
+        }
+        function strobeLight() {
+            
+            const colors = ['#008C45', '#F4F9FF', '#CD212A', '#010101'];
+            let currentIndex = 0;
+            let intervalId;
+
+            function cycleColors() {
+                document.body.style.backgroundColor = colors[currentIndex]
+                currentIndex = (currentIndex + 1) % 4
+            } 
+            intervalId = setInterval(cycleColors, 50)
+            function stopStrobe() {
+                clearInterval(intervalId)
+            }
+            setTimeout(stopStrobe, 1300)  
+        } 
+    </script>
+    <style>
+        .image_en_arrow{
+        display: flex; /* Enables flexbox */
+        /* justify-content: center; /// Optional: centers images horizontally */
+        border: 10px solid black;
+        align-items: center; /* Optional: centers images vertically */
+}
+
+
+
+    </style>
 </head>
 <body>
     <h1>Welcome to my Italy</h1>
     <h3>This is the country of Italy</h3>
     <p>This HTML code contains the poor souls of everyone living there.</p>
+    <div class="image_en_arrow">
     <figure>
-    	<img src="https://i.ytimg.com/vi/Vha-vv2vdpw/maxresdefault.jpg" 
-        alt="Freedom" width="300" height="200"> 
+    	
+        <button onclick='strobeLight()'><img src="https://i.ytimg.com/vi/Vha-vv2vdpw/maxresdefault.jpg" alt="Freedom" width="300" height="200"></button> 
+        
         <figcaption>youtube.com/@AroundTheWorldInVideos</figcaption>
     </figure>
+    <img src="193051.png" width="280px">
+    </div>
     <p> <br> <a href="/skateboard">Meet one of it's residents!</a>
     &nbsp &nbsp oooorrr... &nbsp &nbsp   
     <a href="https://papaspizzeria.io">Visit this PARADISE</a> 
